@@ -20,20 +20,24 @@
   "max_stories": 15,
   "min_score": 5,
   "site": {
-    "enabled": true,
+    "enabled": false,
     "output_dir": "data/summaries",
     "title": "AI 每日简报",
     "description": "由 Horizon 自动生成的每日 AI 资讯简报",
     "publish_to_github_pages": false
   },
   "email": {
-    "enabled": false,
-    "imap_server": "",
+    "enabled": true,
+    "imap_server": "imap.qq.com",
     "imap_port": 993,
-    "smtp_server": "",
+    "imap_enabled": false,
+    "smtp_server": "smtp.qq.com",
     "smtp_port": 465,
-    "email_address": "",
-    "sender_name": "Horizon Daily"
+    "email_address": "3303388127@qq.com",
+    "password_env": "EMAIL_PASSWORD",
+    "sender_name": "AI 每日简报",
+    "subscribe_keyword": "SUBSCRIBE",
+    "unsubscribe_keyword": "UNSUBSCRIBE"
   },
   "sources": {
     "hackernews": {
