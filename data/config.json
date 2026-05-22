@@ -1,0 +1,159 @@
+{
+  "version": "1.0",
+  "enrichment_enabled": false,
+  "filtering": {
+    "ai_score_threshold": 5.0,
+    "time_window_hours": 48
+  },
+  "ai": {
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "temperature": 0.3,
+    "max_tokens": 512,
+    "throttle_sec": 0,
+    "analysis_concurrency": 5,
+    "enrichment_concurrency": 1,
+    "languages": ["zh"]
+  },
+  "language": "zh",
+  "max_stories": 15,
+  "min_score": 5,
+  "site": {
+    "enabled": true,
+    "output_dir": "data/summaries",
+    "title": "AI 每日简报",
+    "description": "由 Horizon 自动生成的每日 AI 资讯简报",
+    "publish_to_github_pages": false
+  },
+  "email": {
+    "enabled": false,
+    "imap_server": "",
+    "imap_port": 993,
+    "smtp_server": "",
+    "smtp_port": 465,
+    "email_address": "",
+    "sender_name": "Horizon Daily"
+  },
+  "sources": {
+    "hackernews": {
+      "enabled": true,
+      "fetch_top_stories": 15,
+      "min_score": 100
+    },
+    "reddit": {
+      "enabled": true,
+      "subreddits": [
+        {
+          "subreddit": "MachineLearning",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 30
+        },
+        {
+          "subreddit": "artificial",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 30
+        },
+        {
+          "subreddit": "LocalLLaMA",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 20
+        }
+      ],
+      "fetch_comments": 3
+    },
+    "rss": [
+      {
+        "name": "Google AI Blog",
+        "url": "https://feeds.feedburner.com/blogspot/gJZg",
+        "enabled": true,
+        "category": "ai"
+      },
+      {
+        "name": "MIT Technology Review - AI",
+        "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+        "enabled": true,
+        "category": "ai"
+      },
+      {
+        "name": "ArXiv AI",
+        "url": "https://rss.arxiv.org/rss/cs.AI",
+        "enabled": false,
+        "category": "research"
+      },
+      {
+        "name": "TechCrunch AI",
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "enabled": true,
+        "category": "ai-news"
+      },
+      {
+        "name": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/feed.xml",
+        "enabled": true,
+        "category": "ai-tools"
+      },
+      {
+        "name": "VentureBeat AI",
+        "url": "https://venturebeat.com/category/ai/feed/",
+        "enabled": true,
+        "category": "ai-business"
+      },
+      {
+        "name": "机器之心",
+        "url": "https://www.jiqizhixin.com/rss",
+        "enabled": true,
+        "category": "ai-zh"
+      }
+    ],
+    "github": [
+      {
+        "type": "repo_releases",
+        "owner": "openai",
+        "repo": "openai-python",
+        "enabled": true
+      },
+      {
+        "type": "repo_releases",
+        "owner": "ggerganov",
+        "repo": "llama.cpp",
+        "enabled": true
+      },
+      {
+        "type": "repo_releases",
+        "owner": "microsoft",
+        "repo": "autogen",
+        "enabled": true
+      },
+      {
+        "type": "repo_releases",
+        "owner": "langchain-ai",
+        "repo": "langchain",
+        "enabled": true
+      },
+      {
+        "type": "trending",
+        "language": "python",
+        "since": "daily",
+        "enabled": true
+      }
+    ],
+    "twitter": {
+      "enabled": false
+    }
+  },
+  "outputs": {
+    "webhook": {
+      "enabled": false
+    }
+  }
+}
