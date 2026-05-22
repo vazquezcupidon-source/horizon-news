@@ -2,7 +2,7 @@
   "version": "1.0",
   "enrichment_enabled": false,
   "filtering": {
-    "ai_score_threshold": 5.0,
+    "ai_score_threshold": 3.0,
     "time_window_hours": 48
   },
   "ai": {
@@ -14,16 +14,18 @@
     "throttle_sec": 0,
     "analysis_concurrency": 5,
     "enrichment_concurrency": 1,
-    "languages": ["zh"]
+    "languages": [
+      "zh"
+    ]
   },
   "language": "zh",
   "max_stories": 15,
-  "min_score": 5,
+  "min_score": 3,
   "site": {
     "enabled": false,
     "output_dir": "data/summaries",
-    "title": "AI Daily Briefing",
-    "description": "Automated AI news summary by Horizon",
+    "title": "AI 每日简报",
+    "description": "由 Horizon 自动生成的每日 AI 资讯简报",
     "publish_to_github_pages": false
   },
   "email": {
@@ -35,7 +37,7 @@
     "smtp_port": 465,
     "email_address": "3303388127@qq.com",
     "password_env": "EMAIL_PASSWORD",
-    "sender_name": "Horizon AI Daily",
+    "sender_name": "AI 每日简报",
     "subscribe_keyword": "SUBSCRIBE",
     "unsubscribe_keyword": "UNSUBSCRIBE"
   },
@@ -91,7 +93,7 @@
       {
         "name": "ArXiv AI",
         "url": "https://rss.arxiv.org/rss/cs.AI",
-        "enabled": false,
+        "enabled": true,
         "category": "research"
       },
       {
@@ -117,6 +119,24 @@
         "url": "https://www.jiqizhixin.com/rss",
         "enabled": true,
         "category": "ai-zh"
+      },
+      {
+        "name": "The Verge - AI",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml",
+        "enabled": true,
+        "category": "ai"
+      },
+      {
+        "name": "VentureBeat",
+        "url": "https://feeds.feedburner.com/venturebeat/SZYF",
+        "enabled": true,
+        "category": "ai-business"
+      },
+      {
+        "name": "The Decoder",
+        "url": "https://the-decoder.com/feed/",
+        "enabled": true,
+        "category": "ai-news"
       }
     ],
     "github": [
@@ -128,20 +148,8 @@
       },
       {
         "type": "repo_releases",
-        "owner": "ggerganov",
+        "owner": "ggml-org",
         "repo": "llama.cpp",
-        "enabled": true
-      },
-      {
-        "type": "repo_releases",
-        "owner": "microsoft",
-        "repo": "autogen",
-        "enabled": true
-      },
-      {
-        "type": "repo_releases",
-        "owner": "langchain-ai",
-        "repo": "langchain",
         "enabled": true
       },
       {
